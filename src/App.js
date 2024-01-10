@@ -7,16 +7,14 @@ import { useState } from "react";
 function App() {
   const [showPop, setShowPop] = useState(false);
 
-  const [inputVal , setInputVal] = useState('');
+  
 
 
   function closePop() {
     setShowPop(false);
   }
 
-  function getVal(e) {
-    setInputVal(e.target.value);
-  }
+ 
 
   return (
     <>

@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { GrClose } from "react-icons/gr";
 
-function Pop({closePop}) {
+function Pop({closePop }) {
+
+    const [inputVal , setInputVal] = useState('');
+
+    function clearInput {
+        setInputVal('');
+    }
+
+ 
+
+
+
   return (
     <div className="background">
       <div className="pop-box">
@@ -17,9 +28,14 @@ function Pop({closePop}) {
        
         
         <div className="main">
-            <input type="text" />
-            <button  > Add Task</button>
+            <input type="text" onChange={(e) =>  setInputVal(e.target.value)}  value={inputVal} />
+            <button > Add Task</button>
         </div>
+
+
+        <p>
+            {inputVal}
+        </p>
 
       </div>
     </div>
