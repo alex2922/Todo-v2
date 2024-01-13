@@ -3,15 +3,22 @@ import ListItem from "./ListItem";
 import { FaPlus } from "react-icons/fa";
 import Pop from "./Pop";
 import { useState } from "react";
+import data from './Data';
 
 function App() {
   const [showPop, setShowPop] = useState(false);
 
-  
+
+  const [tasks, setTasks] = useState([]);
 
 
-  function closePop() {
-    setShowPop(false);
+  const handleAddTask = (newTask) => {
+
+    setTasks((prevTasks) => [...prevTasks, newTask]);
+  };
+
+  function closePop(){
+    setShowPop(false)
   }
 
  
@@ -28,15 +35,19 @@ function App() {
             </div>
           </div>
 
-          <ListItem />
-          <ListItem />
-          <ListItem />
+          {tasks.map((task) => (
+          <ListItem name={task.title} marked={task.marked}
+          priority={task.priority} date={task.date} desc={task.desc}
+          />
+        ))}
+        
+        
         </div>
       </div>
       {
      showPop 
       && 
-      <Pop closePop={closePop} />}
+      <Pop closePop={closePop} onAddTask={handleAddTask} />}
     </>
   );
 }

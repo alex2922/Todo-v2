@@ -65,6 +65,7 @@ body {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  
   align-items: center;
   padding: 20px 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.253);
@@ -84,15 +85,15 @@ body {
       padding: 10px;
       border-radius: 5px;
 
-      &:nth-child(3):hover {
+      &:nth-child(3):hover, .actived {
         color: red;
         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.312);
       }
-      &:nth-child(2):hover {
+      &:nth-child(2):hover , .activee{
         color: rgb(0, 81, 255);
         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.312);
       }
-      &:nth-child(1):hover {
+      &:nth-child(1):hover , .activem{
         color: rgb(0, 255, 81);
         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.312);
       }
@@ -158,11 +159,12 @@ body {
 
       .main{
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         gap: 20px;
+        flex-direction: column;
 
 
-        input{
+        input,textarea,option,select ,.popbtn{
             outline: none;
             border: 1px solid rgba(0, 0, 0, 0.253);
             border-radius: 5px;
